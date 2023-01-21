@@ -7,14 +7,20 @@
 
 #pragma once
 
-#include "SnackType.h"
-
+//#include "SnackType.h"
+#include <string>
 struct Snack
 {
    private:
-   SnackType snackName;
+   char const *snackName;
+
    public:
-   Snack();
-   Snack(SnackType snackType);
-   SnackType getSnackName() const;
+   // init
+   Snack() = default; //default init
+   Snack(char const *snackName); // init with added snack name
+   ~Snack(); // deinit
+   
+   // public methods
+  std::string getSnackName() const;
+  friend std::ostream &operator<<(std::ostream &output, const Snack &m );
 };

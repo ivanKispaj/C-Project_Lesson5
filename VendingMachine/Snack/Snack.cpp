@@ -6,20 +6,28 @@
 //
 
 #include "Snack.h"
-#include "SnackType.h"
+#include <string>
+#include <iostream>
 
-Snack::Snack()
+
+Snack::Snack(char const *snackName)
 {
-    this->snackName = Empty;
+    this->snackName = snackName;
 }
 
-Snack::Snack(SnackType snackType)
+Snack::~Snack()
 {
-    this->snackName = snackType;
+    std::cout << "Delite snack on to destructor Snack:  " << this->snackName << std::endl;
 }
 
-SnackType Snack::getSnackName() const
+std::string Snack::getSnackName() const
 {
     return this->snackName;
 }
 
+// Overloading the output operator to the console
+std::ostream &operator<<(std::ostream &output, const Snack &m ) 
+{
+       output << "Snack name: " << m.snackName << std::endl;       
+       return output;
+}

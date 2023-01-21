@@ -11,17 +11,20 @@
 struct Slot
 {
     private:
-    short int freeSpace;
-    Snack *snack;
-    int size;
+    short int freeSpace; 
+    Snack *snack; // dinamic snack array
+    int size; // array size
 
     //init
     public:
+    Slot() = default;
     Slot(int size);
+    ~Slot();
+
     // public Methods
     public:
     int getFreeSpace() const;
-    void addSnack(Snack snack);
-    void printSlot();
-    SnackType getSnake() const;
+    void addSnack(Snack *snack);
+    Snack getSnake();
+    friend std::ostream &operator<<(std::ostream &output, const Slot &m);
 };
