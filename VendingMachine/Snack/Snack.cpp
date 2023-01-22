@@ -9,17 +9,25 @@
 #include <string>
 #include <iostream>
 
-
+// init
 Snack::Snack(char const *snackName)
 {
     this->snackName = snackName;
 }
 
+// deinit
 Snack::~Snack()
 {
-    std::cout << "Delite snack on to destructor Snack:  " << this->snackName << std::endl;
+    if (this->snackName) {
+
+       std::cout << "Delite snack on to destructor Snack:  " << this->snackName << std::endl;
+    } else {
+        std::cout << "Delite snack on to destructor Snack: ...\n";
+    }
+
 }
 
+// returтs snack name
 std::string Snack::getSnackName() const
 {
     return this->snackName;
@@ -31,3 +39,4 @@ std::ostream &operator<<(std::ostream &output, const Snack &m )
        output << "Snack name: " << m.snackName << std::endl;       
        return output;
 }
+

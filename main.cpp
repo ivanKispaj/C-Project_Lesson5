@@ -17,7 +17,6 @@ int main(int argc, const char * argv[]) {
     Snack *twix = new Snack("Twix"); // Создание снека динамически
     Slot *slot = new Slot(10); // Создание слота динамически
     VendingMachine *mashine = new VendingMachine(5);
-  
     slot->addSnack(twix);
     slot->addSnack(bounty); // добавляем динамический snack
     slot->addSnack(snikers); // добавляем динамический snack
@@ -30,11 +29,13 @@ int main(int argc, const char * argv[]) {
     mashine->addSlot(slot);
     std::cout << *mashine << std::endl;
     std::cout << *slot << std::endl;
-    delete snikers; // удаление динамической переменной
-    delete bounty; // удаление динамической переменной
-    delete slot; // удаление динамической переменной
-    delete twix;  // удаление динамической переменной
     delete mashine;  // удаление динамической переменной
-    
+    slot->deleteLast();
+    delete slot; // удаление динамической переменной
+    std::cout << "Свободное место в слоте: " << slot->getFreeSpace() << std::endl;
+    delete snikers; // удаление динамической переменной
+    delete bounty; // удаление динамической переменной 
+    delete twix;  // удаление динамической переменной
+
     return 0; // завершение программы
 }

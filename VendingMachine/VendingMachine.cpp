@@ -13,6 +13,7 @@ VendingMachine::VendingMachine(int slotCount)
 // deinit
 VendingMachine::~VendingMachine()
 {
+    std::cout << "Удален массив slot из дкструктора VendingMachine\n";
     delete[] slot;
 }
 

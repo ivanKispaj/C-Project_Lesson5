@@ -11,6 +11,7 @@
 struct Slot
 {
     private:
+    bool isLastObject {false}; // перед вызовом delete в main вызвать метод deleteAll() который установит true!
     short int freeSpace; 
     Snack *snack; // dinamic snack array
     int size; // array size
@@ -23,6 +24,7 @@ struct Slot
 
     // public Methods
     public:
+    void deleteLast();
     int getFreeSpace() const;
     void addSnack(Snack *snack);
     Snack getSnake();

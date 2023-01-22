@@ -17,11 +17,23 @@ Slot::Slot(int size)
     snack = new Snack[size];
 }
 
-// public deinit
+
+//public deinit
 Slot::~Slot()
 {
-    std::cout << "Delite snack in to destructor on Slot\n";
-    delete[] snack;
+   if (!this->isLastObject) {
+    // если это не последний объект
+            delete[] snack;
+   } 
+    
+  
+     std::cout << "Deleting a slot in the destructor : Slot\n" << std::endl;
+}
+
+//  Sets selectobject to truefor the subsequent deletion of the object in main
+void Slot::deleteLast()
+{
+    this->isLastObject = true;
 }
 
 // Returns the number of free cells in the slot
@@ -73,3 +85,4 @@ std::ostream &operator<<(std::ostream &output, const Slot &m)
             }
     return output;
 }
+
