@@ -21,9 +21,9 @@ Snack::~Snack()
 {
     if (this->snackName) {
 
-       std::cout << "Delite snack on to destructor Snack:  " << this->snackName << std::endl;
+       std::cout << "Delete snack on to destructor Snack:  " << this->snackName << std::endl;
     } else {
-        std::cout << "Delite snack on to destructor Snack: ...\n";
+        std::cout << "Delete snack on to destructor Snack: ...\n";
     }
 
 }
