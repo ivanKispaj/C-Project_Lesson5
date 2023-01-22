@@ -12,12 +12,12 @@
 struct Snack
 {
    private:
-   char const *snackName;
-
+  char const *snackName;
+  double price;
    public:
    // init
    Snack() = default; //default init
-   Snack(char const *snackName); // init with added snack name
+   Snack(char const *snackName, double price = 0); // init with added snack name
    ~Snack(); // deinit
    
    // public methods

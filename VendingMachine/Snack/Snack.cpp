@@ -10,8 +10,9 @@
 #include <iostream>
 
 // init
-Snack::Snack(char const *snackName)
+Snack::Snack(char const *snackName, double price)
 {
+    this->price = price;
     this->snackName = snackName;
 }
 
@@ -36,7 +37,7 @@ std::string Snack::getSnackName() const
 // Overloading the output operator to the console
 std::ostream &operator<<(std::ostream &output, const Snack &m ) 
 {
-       output << "Snack name: " << m.snackName << std::endl;       
+       output << "Snack name: " << m.snackName << " , price: " << m.price << std::endl;       
        return output;
 }
 

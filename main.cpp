@@ -11,10 +11,10 @@
 
 int main(int argc, const char * argv[]) {
   
-    Snack snikers1 = Snack("Mars"); // Создание снека на стеке ( удалится по завершении main())
-    Snack *snikers = new Snack("Snikers"); // Создание снека динамически
-    Snack *bounty = new Snack("Bounty"); // Создание снека динамически
-    Snack *twix = new Snack("Twix"); // Создание снека динамически
+    Snack snikers1 = Snack("Mars", 50); // Создание снека на стеке ( удалится по завершении main())
+    Snack *snikers = new Snack("Snikers", 80); // Создание снека динамически
+    Snack *bounty = new Snack("Bounty",45.5); // Создание снека динамически
+    Snack *twix = new Snack("Twix", 60.3); // Создание снека динамически
     Slot *slot = new Slot(10); // Создание слота динамически
     VendingMachine *mashine = new VendingMachine(5);
     slot->addSnack(twix);
