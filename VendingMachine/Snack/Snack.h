@@ -11,10 +11,11 @@
 struct Snack
 {
   private:
-  char const *snackName;
-  bool isEmpty;
+  bool _isEmpty;
+  char const *_snackName;
+ 
   public:
-  double price;
+  double _price;
   // init
   Snack(); //default init
   Snack(char const *snackName, double price = 0); // init with added snack name

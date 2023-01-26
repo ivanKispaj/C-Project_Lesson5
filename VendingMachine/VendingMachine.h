@@ -11,11 +11,13 @@
 struct VendingMachine
 {
     private:
-    short int slotCount;
-    short int currentSlot;
-    Slot *slot; // dinamic array
+    Slot *_slot; // dinamic array
+    short int _size;
+    short int _currentSlot;
+  
 
     public:
+    VendingMachine() = default;
     VendingMachine(int slotCount); // init
     ~VendingMachine(); // deinit
     void addSlot(Slot *newSlot);

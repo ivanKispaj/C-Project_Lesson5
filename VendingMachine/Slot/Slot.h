@@ -11,14 +11,16 @@
 struct Slot
 {
     private:
-    short int currentPoint; 
-    Snack *snack; // dinamic snack array
-    int size; // array size
+    Snack *_snack; // dinamic snack array
+    int _size; // array size
+    short int _currentPoint; 
+  
+    
 
     //init
     public:
     Slot();
-    Slot(int size);
+    Slot(const int size);
     ~Slot();
 
     // public Methods

@@ -8,26 +8,22 @@
 #include "Snack.h"
 
 // init
-Snack::Snack()
+Snack::Snack() : _isEmpty(true), _snackName(), _price(0)
 {
-    this->isEmpty = true;
 }
 
-Snack::Snack(char const *snackName, double price)
+Snack::Snack(char const *snackName, double price) : _isEmpty(false), _snackName(snackName), _price(price)
 {
-    this->isEmpty = false;
-    this->price = price;
-    this->snackName = snackName;
 }
 
 
 // Overloading the output operator to the console
 std::ostream &operator<<(std::ostream &output, const Snack &m ) 
 {
-    if (m.isEmpty) {
+    if (m._isEmpty) {
         output << "Empty cell"  << std::endl;
     } else {
-        output << "Snack name: " << m.snackName << " , price: " << m.price << std::endl;       
+        output << "Snack name: " << m._snackName << " , price: " << m._price << std::endl;       
 
     }
        return output;
