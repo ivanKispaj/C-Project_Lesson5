@@ -11,22 +11,21 @@
 struct Slot
 {
     private:
-    bool isLastObject {false}; // перед вызовом delete в main вызвать метод deleteAll() который установит true!
-    short int freeSpace; 
+    short int currentPoint; 
     Snack *snack; // dinamic snack array
     int size; // array size
 
     //init
     public:
-    Slot() = default;
+    Slot();
     Slot(int size);
     ~Slot();
 
     // public Methods
     public:
-    void deleteLast();
     int getFreeSpace() const;
-    void addSnack(Snack *snack);
-    Snack getSnake();
+    void addSnack(Snack *newSnack);
+    void deleteSnack();
+    void icreasePriceByPercent(int percent);
     friend std::ostream &operator<<(std::ostream &output, const Slot &m);
 };
