@@ -36,15 +36,23 @@ int VendingMachine::getFreeSpace() const
     return _size - (_currentSlot - 1);
 }
 
+// //Increases the price of all snacks in all slots
 void VendingMachine::icreasePriceByPercent(int percent)
 {
     for (int i = 0; i < _size; i++) {
         _slot[i].icreasePriceByPercent(percent);
     }
 }
+
+// //Increases the price of all snacks in slotNumber
 void VendingMachine::icreasePriceByPercent(int percent, int slotNumber) 
 {
-   _slot[slotNumber].icreasePriceByPercent(percent);
+    if (slotNumber > 0 && slotNumber <= _size) {
+        _slot[slotNumber - 1].icreasePriceByPercent(percent);
+    } else {
+        std::cout << "Error! Wrong slot number!\n";
+    }
+   
 }
 
 // Overloading the output operator to the console

@@ -11,7 +11,7 @@
 struct Snack
 {
   private:
-  bool _isEmpty;
+  bool _isEmpty; 
   char const *_snackName;
  
   public:

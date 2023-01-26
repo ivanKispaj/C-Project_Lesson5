@@ -13,7 +13,7 @@ struct Slot
     private:
     Snack *_snack; // dinamic snack array
     int _size; // array size
-    short int _currentPoint; 
+    short int _currentPoint; // Pointer to the first free space in the array
   
     
 
@@ -25,9 +25,9 @@ struct Slot
 
     // public Methods
     public:
-    int getFreeSpace() const;
-    void addSnack(Snack *newSnack);
-    void deleteSnack();
-    void icreasePriceByPercent(int percent);
+    int getFreeSpace() const; // Returns the number of free cells
+    void addSnack(Snack *newSnack); // Added new snack to slot cell
+    void deleteSnack(); // Removes the last added snow from the slot
+    void icreasePriceByPercent(int percent); // increase price all snack from slot at pecent
     friend std::ostream &operator<<(std::ostream &output, const Slot &m);
 };

@@ -12,17 +12,17 @@ struct VendingMachine
 {
     private:
     Slot *_slot; // dinamic array
-    short int _size;
-    short int _currentSlot;
+    short int _size; // count size in machine
+    short int _currentSlot; // current empty slot
   
 
     public:
-    VendingMachine() = default;
+    VendingMachine() = default; // default init
     VendingMachine(int slotCount); // init
     ~VendingMachine(); // deinit
-    void addSlot(Slot *newSlot);
-    int getFreeSpace() const;
-    void icreasePriceByPercent(int percent);
-    void icreasePriceByPercent(int percent, int slotNumber);
-   friend std::ostream &operator<<(std::ostream &output, const VendingMachine &m );
+    void addSlot(Slot *newSlot); // added slot to machine
+    int getFreeSpace() const; // return free space in machine
+    void icreasePriceByPercent(int percent); // Increases the price of all snacks in all slots
+    void icreasePriceByPercent(int percent, int slotNumber); //Increases the price of all snacks in slotNumber
+   friend std::ostream &operator<<(std::ostream &output, const VendingMachine &m ); //
 };

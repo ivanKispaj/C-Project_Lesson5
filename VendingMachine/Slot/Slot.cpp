@@ -41,9 +41,7 @@ void Slot::addSnack(Snack *newSnack)
     
 }
 
-// Returns the last added snack from the slot cell,
-// with its removal from the slot.
-// if the slot is empty, returns a snack with the type: Empty!
+// Removes the last added snow from the slot
 void Slot::deleteSnack()
 {
     if (_currentPoint == 0) {
@@ -55,13 +53,14 @@ void Slot::deleteSnack()
     }
 }
 
-// 
+// increase price all snack from slot at pecent
 void Slot::icreasePriceByPercent(int percent)
 {
     for (int i = 0; i < _size; i++) {
         _snack[i]._price *= 1 + (double(percent) / 100);
     }
 }
+
 // Overloading the output operator to the console
 std::ostream &operator<<(std::ostream &output, const Slot &m)
 {

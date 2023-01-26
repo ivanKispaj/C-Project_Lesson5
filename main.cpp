@@ -9,8 +9,10 @@
 #include "VendingMachine/Slot/Slot.h"
 #include "VendingMachine/VendingMachine.h"
 
+
 int main(int argc, const char * argv[]) {
-  
+
+    setlocale(LC_ALL, ""); 
     Snack *snikers = new Snack("Snikers", 80); // Создание снека динамически
     Snack *bounty = new Snack("Bounty",45.5); // Создание снека динамически
     Snack *twix = new Snack("Twix", 60.3); // Создание снека динамически
