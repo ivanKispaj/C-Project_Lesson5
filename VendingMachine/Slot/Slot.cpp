@@ -59,9 +59,8 @@ void Slot::icreasePriceByPercent(int percent)
   {
     if (_snacks[i] != nullptr)
     {
-      Snack snack = *_snacks[i];
-      snack._price *= 1 + (double(percent) / 100);
-      *_snacks[i] = snack;
+      double newPrice = (_snacks[i]->getPrice() * (1 + (double(percent) / 100)));
+      _snacks[i]->setPrice(newPrice);
     }
   }
 }

@@ -15,6 +15,16 @@ Snack::~Snack()
     std::cout << "delete Snack ...\n";
 }
 
+double Snack::getPrice() const
+{
+    return _price;
+}
+
+void Snack::setPrice(double price)
+{
+    _price = price;
+}
+
 // Overloading the output operator to the console
 std::ostream &operator<<(std::ostream &output, const Snack &m)
 {

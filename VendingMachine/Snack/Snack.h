@@ -13,13 +13,15 @@ struct Snack
 private:
   bool _isEmpty{true};
   char const *_snackName;
+  double _price{0};
 
 public:
-  double _price{0};
   // init
   Snack() = default;                              // default init
   Snack(char const *snackName, double price = 0); // init with added snack name
   ~Snack();
   // public methods
+  double getPrice() const;
+  void setPrice(double price);
   friend std::ostream &operator<<(std::ostream &output, const Snack &m);
 };
