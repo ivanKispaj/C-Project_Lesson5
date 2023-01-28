@@ -11,7 +11,7 @@
 struct Slot
 {
     private:
-    Snack *_snack; // dinamic snack array
+    Snack** _snacks {nullptr}; // dinamic snack array
     int _size; // array size
     short int _currentPoint; // Pointer to the first free space in the array
   
@@ -19,7 +19,7 @@ struct Slot
 
     //init
     public:
-    Slot();
+    Slot() = default;
     Slot(const int size);
     ~Slot();
 

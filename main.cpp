@@ -13,47 +13,36 @@
 int main(int argc, const char * argv[]) {
 
     setlocale(LC_ALL, ""); 
-    Snack *snikers = new Snack("Snikers", 80); // Создание снека динамически
-    Snack *bounty = new Snack("Bounty",45.5); // Создание снека динамически
-    Snack *twix = new Snack("Twix", 60.3); // Создание снека динамически
-    Slot *slot1 = new Slot(10); // Создание слота динамически
-    VendingMachine *machine = new VendingMachine(5); // Create VendingMachine with 5 slots
-    Slot *slot2 = new Slot(15);
+    Snack *snikers = new Snack("Snikers", 80) ;
+    Snack *bounty = new Snack("Bounty", 76.5);
+    Snack *twix = new Snack("Twix", 110);
+    Slot *slot = new Slot(10); // Создание слота динамически
+    Slot *slot_1 = new Slot(5);
+    slot_1->addSnack(twix);
 
-    // Added snacks to slot2
-    slot2->addSnack(twix);
-    slot2->addSnack(bounty); 
-    slot2->addSnack(snikers);
-    slot2->addSnack(bounty);
-    slot2->addSnack(snikers);
-    slot2->addSnack(bounty); 
-    slot2->addSnack(twix);
-    slot2->addSnack(bounty); 
-    slot2->addSnack(snikers); 
-    slot2->addSnack(bounty); 
-    slot2->deleteSnack();
-     // Added snacks to slot1
-    slot1->addSnack(snikers);
-    slot1->addSnack(twix);
-    slot1->addSnack(bounty); 
-    slot1->addSnack(snikers); 
-    std::cout << "Свободное место в слоте 1: " << slot1->getFreeSpace() << std::endl; // вывод свободного места в слоте
-    std::cout << "Свободное место в слоте 2: " << slot2->getFreeSpace() << std::endl << std::endl; // вывод свободного места в слоте
-    machine->addSlot(slot1);
-    machine->addSlot(slot2);
-    machine->icreasePriceByPercent(20, 1);
+    slot->addSnack(snikers);
+    slot->addSnack(bounty);
+    VendingMachine *machine = new VendingMachine(5); // Create VendingMachine with 5 slots
+    std::cout << "Свободное место в слоте 1: " << slot->getFreeSpace() << std::endl; // вывод свободного места в слоте
+
+    machine->addSlot(slot); 
+    machine->addSlot(slot_1);
+    
     std::cout << *machine << std::endl; 
-    std::cout << "Deleting snikers\n";
-    delete snikers; // удаление динамической переменной
-    std::cout << "Deleting bounty\n";
-    delete bounty; // удаление динамической переменной 
-    std::cout << "Deleting twix\n";
-    delete twix;  // удаление динамической переменной
-     std::cout << "Deleting slot 1\n";
-    delete slot1; // удаление динамической переменной
-     std::cout << "Deleting slot 2\n";
-    delete slot2;
+    machine->icreasePriceByPercent(30, 1);
+    std::cout << *machine << std::endl; 
+    slot->deleteSnack();
+    std::cout << *machine << std::endl; 
+    std::cout << "Free space machine: " << machine->getFreeSpace() << std::endl;
+
     std::cout << "Deleting mashine\n";
     delete machine;  // удаление динамической переменной
+    std::cout << "Deleting slot\n";
+    delete slot;
+    delete slot_1;
+    std::cout << "Deleting snack\n";
+    delete snikers;
+    delete bounty;
+    delete twix;
     return 0; // завершение программы
 }

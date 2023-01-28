@@ -11,7 +11,7 @@
 struct VendingMachine
 {
     private:
-    Slot *_slot; // dinamic array
+    Slot** _slots {nullptr}; // dinamic array
     short int _size; // count size in machine
     short int _currentSlot; // current empty slot
   
@@ -21,6 +21,7 @@ struct VendingMachine
     VendingMachine(int slotCount); // init
     ~VendingMachine(); // deinit
     void addSlot(Slot *newSlot); // added slot to machine
+    void deleteSlot(); // delete slot from machine
     int getFreeSpace() const; // return free space in machine
     void icreasePriceByPercent(int percent); // Increases the price of all snacks in all slots
     void icreasePriceByPercent(int percent, int slotNumber); //Increases the price of all snacks in slotNumber
