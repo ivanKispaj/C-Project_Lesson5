@@ -16,12 +16,15 @@ Snack::~Snack()
 }
 
 // Overloading the output operator to the console
-std::ostream &operator<<(std::ostream &output, const Snack &m ) 
+std::ostream &operator<<(std::ostream &output, const Snack &m)
 {
-    if (m._isEmpty) {
-        output << "Empty cell"  << std::endl;
-    } else {
-        output << "Snack name: " << m._snackName << " , price: " << m._price;       
+    if (m._isEmpty)
+    {
+        output << "Empty cell" << std::endl;
     }
-       return output;
+    else
+    {
+        output << "Snack name: " << m._snackName << " , price: " << m._price;
+    }
+    return output;
 }

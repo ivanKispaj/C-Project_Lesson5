@@ -10,16 +10,16 @@
 
 struct Snack
 {
-  private:
-  bool _isEmpty {true}; 
+private:
+  bool _isEmpty{true};
   char const *_snackName;
- 
-  public:
-  double _price {0};
+
+public:
+  double _price{0};
   // init
-  Snack() = default; //default init
+  Snack() = default;                              // default init
   Snack(char const *snackName, double price = 0); // init with added snack name
   ~Snack();
-   // public methods
-  friend std::ostream &operator<<(std::ostream &output, const Snack &m );
+  // public methods
+  friend std::ostream &operator<<(std::ostream &output, const Snack &m);
 };
